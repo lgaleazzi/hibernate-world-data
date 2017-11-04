@@ -3,6 +3,7 @@ package com.worlddata.utils;
 import com.worlddata.model.Country;
 
 import java.text.DecimalFormat;
+import java.util.Collections;
 
 public class Formatter
 {
@@ -75,14 +76,9 @@ public class Formatter
         return header.toString();
     }
 
-    private static StringBuilder emptySpaces(int numberOfEmptySpaces)
+    private static String emptySpaces(int numberOfEmptySpaces)
     {
-        StringBuilder spaces = new StringBuilder();
-        for (int i = 0; i < numberOfEmptySpaces; i++)
-        {
-            spaces.append(" ");
-        }
-        return spaces;
+        return String.join("", Collections.nCopies(numberOfEmptySpaces, " "));
     }
 
     private static String doubleToFormattedString(Double d)
@@ -107,12 +103,7 @@ public class Formatter
 
     private static String divider(int numberOfDashes)
     {
-        StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i < numberOfDashes; i++)
-        {
-            stringBuilder.append("-");
-        }
-        return stringBuilder.toString();
+        return String.join("", Collections.nCopies(numberOfDashes, "-"));
     }
 }
 
